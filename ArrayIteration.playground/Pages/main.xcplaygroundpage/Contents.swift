@@ -14,6 +14,7 @@
  ### 1. You're building an app and want to store all of the ingredients added to a cart. How would you represent this cart in code? The ingredients are "Chips", "Salsa", "Guacamole", "Red wine". Explicitly mark the content of the cart as strings.
  */
 // write your code here
+let shoppingCart: [String] = ["Chips", "Salsa", "Guacamole", "Red wine"]
 
 
 
@@ -24,7 +25,7 @@
  ### 2. You need to create a list that contains the numbers from 1 to 10. How would you represent this list in code? Explicitly mark the content of the cart as numbers.
  */
 // write your code here
-
+let numbers: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
 
@@ -35,7 +36,10 @@
  ### 3. Take the list of numbers you created in question 2 and print their values in the most efficient way possible.
  */
 // write your code here
-
+print(numbers)
+for number in numbers {
+	print(number)
+}
 
 
 
@@ -46,7 +50,9 @@
  ### 4. Take the list of shopping cart items you created in question 1 and print their values in the most efficient way possible. Prefix each item in the array with a string of text.
  */
 // write your code here
-
+for (index, item) in shoppingCart.enumerate() {
+	print("\(index + 1). \(item)")
+}
 
 
 
@@ -57,8 +63,13 @@
  ### 5. Take the list of shopping cart items you created in question 1 and print their values by passing each item in list to a function to be printed.
  */
 // write your code here
+func printItems(items: [String]) {
+	for item in items {
+		print(item)
+	}
+}
 
-
+printItems(shoppingCart)
 
 
 
@@ -68,7 +79,17 @@
  ### 4. Create a function that takes an array of names and greets each person with the following message "Good morning x" <- x being the individuals name. One caveat. If the persons first name is Michael, we want to greet them with the message, "Top of the morning Michael!".
  */
 // write your code here
-
+func greet(names: [String]) {
+	
+	for name in names {
+		if name == "Michael" {
+			print("Top of the morning \(name)!")
+		}
+		else {
+			print("Good morning \(name)")
+		}
+	}
+}
 
 
 
@@ -79,7 +100,17 @@
  */
 // write your code here
 
-
+func lessThan50(numbers: [Int]) -> [Int] {
+	var newArray: [Int] = []
+	
+	for number in numbers {
+		if number < 50 {
+			newArray.append(number)
+		}
+	}
+	
+	return newArray
+}
 
 
 
